@@ -216,7 +216,7 @@ class QNAP extends eqLogic {
 			for($i=1; $i<=$this->nbSysFan; $i++) {
 				$this->infos['fan'.$i.'speed'] = 0;
 				
-				$this->infos['hdd'.$i.'temp'] = explode(" ", $this->execSNMP($IPaddress, $community, $oidSysFanSpeed.$i, $snmpVersion))[0];
+				$this->infos['fan'.$i.'speed'] = explode(" ", $this->execSNMP($IPaddress, $community, $oidSysFanSpeed.$i, $snmpVersion))[0];
 			}
 			
 			$this->infos['hddfree'] = $this->execSNMP($IPaddress, $community, $oidHDDfree, $snmpVersion);
